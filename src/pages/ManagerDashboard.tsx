@@ -11,7 +11,7 @@ function EmployeeProfileModal({ employee, onClose }: { employee: any; onClose: (
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-20 backdrop-blur-sm flex items-center justify-center z-50 animate-fade-in px-4">
-    <div className="bg-white rounded-xl p-6 max-w-2xl w-full sm:max-w-lg shadow-xl animate-slide-in">
+    <div className="bg-white rounded-xl p-6 max-w-xl w-full sm:max-w-xl shadow-xl animate-slide-in">
       <div className="flex justify-between items-start mb-6">
         <h2 className="text-2xl font-semibold">Employee Profile</h2>
         <button
@@ -36,8 +36,9 @@ function EmployeeProfileModal({ employee, onClose }: { employee: any; onClose: (
             </div>
           )}
         </div>
-        <div className="flex-grow w-full">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="flex-grow w-full min-w-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  
             <div>
               <div className="flex items-center mb-3 space-x-2">
                 <div className="p-2 bg-blue-50 rounded-full">
@@ -61,9 +62,18 @@ function EmployeeProfileModal({ employee, onClose }: { employee: any; onClose: (
   
               <div className="flex items-center mb-3 space-x-2">
                 <div className="p-2 bg-blue-50 rounded-full">
-                  <User size={16} className="text-primary" />
+                  <Briefcase size={16} className="text-primary" />
                 </div>
                 <div>
+                  <p className="text-sm text-gray-500">Role</p>
+                  <p className="font-medium">{employee.role}</p>
+                </div>
+              </div>
+              <div className="flex items-center mb-3 space-x-2">
+                <div className="p-2 bg-blue-50 rounded-full">
+                  <User size={16} className="text-primary" />
+                </div>
+                <div className="break-words">
                   <p className="text-sm text-gray-500">Email</p>
                   <p className="font-medium">{employee.email}</p>
                 </div>
@@ -71,7 +81,7 @@ function EmployeeProfileModal({ employee, onClose }: { employee: any; onClose: (
             </div>
   
             <div>
-              <div className="flex items-center mb-3 space-x-2">
+              {/* <div className="flex items-center mb-3 space-x-2">
                 <div className="p-2 bg-blue-50 rounded-full">
                   <Briefcase size={16} className="text-primary" />
                 </div>
@@ -80,7 +90,7 @@ function EmployeeProfileModal({ employee, onClose }: { employee: any; onClose: (
                   <p className="font-medium">{employee.role}</p>
                 </div>
               </div>
-  
+   */}
               <div className="flex items-center mb-3 space-x-2">
                 <div className="p-2 bg-blue-50 rounded-full">
                   <Calendar size={16} className="text-primary" />
@@ -100,6 +110,7 @@ function EmployeeProfileModal({ employee, onClose }: { employee: any; onClose: (
                   <p className="font-medium">{format(new Date(employee.date_of_birth), 'MMM dd, yyyy')}</p>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
@@ -331,7 +342,7 @@ function ManagerDashboard() {
                           {leave.employees.photo_url ? (
                             <img
                               src={leave.employees.photo_url}
-                              alt={leave.employees.name}
+                              // alt={leave.employees.name}
                               className="w-12 h-12 rounded-xl object-cover"
                             />
                           ) : (
