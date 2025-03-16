@@ -10,95 +10,94 @@ function EmployeeProfileModal({ employee, onClose }: { employee: any; onClose: (
   if (!employee) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-20 backdrop-blur-sm flex items-center justify-center z-50 animate-fade-in">
-      <div className="bg-white rounded-xl p-6 max-w-2xl w-full mx-4 animate-slide-in shadow-xl">
-        <div className="flex justify-between items-start mb-6">
-          <h2 className="text-2xl font-semibold">Employee Profile</h2>
-          <button
-            onClick={onClose}
-            className="text-gray-500 hover:text-gray-700 bg-gray-100 p-2 rounded-full transition-colors"
-          >
-            <X size={18} />
-          </button>
+    <div className="fixed inset-0 bg-black bg-opacity-20 backdrop-blur-sm flex items-center justify-center z-50 animate-fade-in px-4">
+    <div className="bg-white rounded-xl p-6 max-w-2xl w-full sm:max-w-lg shadow-xl animate-slide-in">
+      <div className="flex justify-between items-start mb-6">
+        <h2 className="text-2xl font-semibold">Employee Profile</h2>
+        <button
+          onClick={onClose}
+          className="text-gray-500 hover:text-gray-700 bg-gray-100 p-2 rounded-full transition-colors"
+        >
+          <X size={18} />
+        </button>
+      </div>
+  
+      <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6">
+        <div className="flex-shrink-0">
+          {employee.photo_url ? (
+            <img
+              src={employee.photo_url}
+              alt={employee.name}
+              className="w-24 h-24 sm:w-32 sm:h-32 rounded-xl object-cover shadow-md"
+            />
+          ) : (
+            <div className="w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl flex items-center justify-center shadow-md">
+              <span className="text-3xl sm:text-4xl text-primary font-light">{employee.name[0].toUpperCase()}</span>
+            </div>
+          )}
         </div>
-        
-        <div className="flex items-start space-x-6">
-          <div className="flex-shrink-0">
-            {employee.photo_url ? (
-              <img
-                src={employee.photo_url}
-                alt={employee.name}
-                className="w-32 h-32 rounded-xl object-cover shadow-md"
-              />
-            ) : (
-              <div className="w-32 h-32 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl flex items-center justify-center shadow-md">
-                <span className="text-4xl text-primary font-light">{employee.name[0].toUpperCase()}</span>
-              </div>
-            )}
-          </div>
-          <div className="flex-grow">
-            <div className="grid grid-cols-2 gap-6">
-              <div>
-                <div className="flex items-center mb-3 space-x-2">
-                  <div className="p-2 bg-blue-50 rounded-full">
-                    <User size={16} className="text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500">Employee ID</p>
-                    <p className="font-medium">{employee.employee_id}</p>
-                  </div>
+        <div className="flex-grow w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <div className="flex items-center mb-3 space-x-2">
+                <div className="p-2 bg-blue-50 rounded-full">
+                  <User size={16} className="text-primary" />
                 </div>
-                
-                <div className="flex items-center mb-3 space-x-2">
-                  <div className="p-2 bg-blue-50 rounded-full">
-                    <User size={16} className="text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500">Name</p>
-                    <p className="font-medium">{employee.name}</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center mb-3 space-x-2">
-                  <div className="p-2 bg-blue-50 rounded-full">
-                    <User size={16} className="text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500">Email</p>
-                    <p className="font-medium">{employee.email}</p>
-                  </div>
+                <div>
+                  <p className="text-sm text-gray-500">Employee ID</p>
+                  <p className="font-medium">{employee.employee_id}</p>
                 </div>
               </div>
-              
-              <div>
-                <div className="flex items-center mb-3 space-x-2">
-                  <div className="p-2 bg-blue-50 rounded-full">
-                    <Briefcase size={16} className="text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500">Role</p>
-                    <p className="font-medium">{employee.role}</p>
-                  </div>
+  
+              <div className="flex items-center mb-3 space-x-2">
+                <div className="p-2 bg-blue-50 rounded-full">
+                  <User size={16} className="text-primary" />
                 </div>
-                
-                <div className="flex items-center mb-3 space-x-2">
-                  <div className="p-2 bg-blue-50 rounded-full">
-                    <Calendar size={16} className="text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500">Date of Joining</p>
-                    <p className="font-medium">{format(new Date(employee.date_of_joining), 'MMM dd, yyyy')}</p>
-                  </div>
+                <div>
+                  <p className="text-sm text-gray-500">Name</p>
+                  <p className="font-medium">{employee.name}</p>
                 </div>
-                
-                <div className="flex items-center mb-3 space-x-2">
-                  <div className="p-2 bg-blue-50 rounded-full">
-                    <Calendar size={16} className="text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500">Date of Birth</p>
-                    <p className="font-medium">{format(new Date(employee.date_of_birth), 'MMM dd, yyyy')}</p>
-                  </div>
+              </div>
+  
+              <div className="flex items-center mb-3 space-x-2">
+                <div className="p-2 bg-blue-50 rounded-full">
+                  <User size={16} className="text-primary" />
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500">Email</p>
+                  <p className="font-medium">{employee.email}</p>
+                </div>
+              </div>
+            </div>
+  
+            <div>
+              <div className="flex items-center mb-3 space-x-2">
+                <div className="p-2 bg-blue-50 rounded-full">
+                  <Briefcase size={16} className="text-primary" />
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500">Role</p>
+                  <p className="font-medium">{employee.role}</p>
+                </div>
+              </div>
+  
+              <div className="flex items-center mb-3 space-x-2">
+                <div className="p-2 bg-blue-50 rounded-full">
+                  <Calendar size={16} className="text-primary" />
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500">Date of Joining</p>
+                  <p className="font-medium">{format(new Date(employee.date_of_joining), 'MMM dd, yyyy')}</p>
+                </div>
+              </div>
+  
+              <div className="flex items-center mb-3 space-x-2">
+                <div className="p-2 bg-blue-50 rounded-full">
+                  <Calendar size={16} className="text-primary" />
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500">Date of Birth</p>
+                  <p className="font-medium">{format(new Date(employee.date_of_birth), 'MMM dd, yyyy')}</p>
                 </div>
               </div>
             </div>
@@ -106,6 +105,8 @@ function EmployeeProfileModal({ employee, onClose }: { employee: any; onClose: (
         </div>
       </div>
     </div>
+  </div>
+  
   );
 }
 
