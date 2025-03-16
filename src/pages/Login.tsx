@@ -46,12 +46,13 @@ function Login() {
 
   
   return (
+
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
     <div className="w-full max-w-md">
       <div className="bg-white rounded-xl shadow-lg overflow-hidden">
         {/* Header with gradient background */}
         <div className="bg-gradient-to-r from-blue-600 to-blue-400 p-6 text-white text-center">
-          <h1 className="text-2xl font-bold mb-2">Leave Management System</h1>
+          <h1 className="text-3xl font-bold mb-2">Easy Leave</h1>
           <p className="text-blue-100">Sign in to access your dashboard</p>
         </div>
   
