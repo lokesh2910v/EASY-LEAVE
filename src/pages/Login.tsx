@@ -55,15 +55,9 @@ function Login() {
           <h1 className="text-3xl font-bold mb-2">Easy Leave</h1>
           <p className="text-blue-100">Sign in to access your dashboard</p>
 
-  <h3 style="margin-top: 0;">Demo Accounts for Testing</h3>
-  <p>Manager Account
-     Username: manager2004@gmail.com
-     Password: 12345
-  </p>
-  <p>Employee Account
-     Username: employee2004@gmail.com
-     Password: 12345
-  </p>
+  <h3 className="text-blue-100">Demo Accounts for Testing</h3>
+  <p className="text-blue-100">Manager Account  Username: manager2004@gmail.com Password: 12345 </p>
+  <p className="text-blue-100">Employee Account  Username: employee2004@gmail.com   Password: 12345</p>
 
 
         </div>
