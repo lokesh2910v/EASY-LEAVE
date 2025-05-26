@@ -54,6 +54,18 @@ function Login() {
         <div className="bg-gradient-to-r from-blue-600 to-blue-400 p-6 text-white text-center">
           <h1 className="text-3xl font-bold mb-2">Easy Leave</h1>
           <p className="text-blue-100">Sign in to access your dashboard</p>
+
+  <h3 style="margin-top: 0;">Demo Accounts for Testing</h3>
+  <p><strong>Manager Account</strong><br>
+     Username: <code>manager2004@gmail.com</code><br>
+     Password: <code>12345</code>
+  </p>
+  <p><strong>Employee Account</strong><br>
+     Username: <code>employee2004@gmail.com</code><br>
+     Password: <code>12345</code>
+  </p>
+
+
         </div>
   
         <div className="p-6">
@@ -147,18 +159,6 @@ function Login() {
                 <ChevronRight size={16} className="ml-1" />
               </button>
             </div>
-<div style="border: 1px solid #ccc; padding: 15px; margin-top: 20px; background-color: #f9f9f9; font-family: Arial, sans-serif; border-radius: 5px;">
-  <h3 style="margin-top: 0;">Demo Accounts for Testing</h3>
-  <p><strong>Manager Account</strong><br>
-     Username: <code>manager2004@gmail.com</code><br>
-     Password: <code>12345</code>
-  </p>
-  <p><strong>Employee Account</strong><br>
-     Username: <code>employee2004@gmail.com</code><br>
-     Password: <code>12345</code>
-  </p>
-</div>
-
           </form>
 
 
