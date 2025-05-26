@@ -148,6 +148,18 @@ function Login() {
               </button>
             </div>
           </form>
+<div style="border: 1px solid #ccc; padding: 15px; margin-top: 20px; background-color: #f9f9f9; font-family: Arial, sans-serif; border-radius: 5px;">
+  <h3 style="margin-top: 0;">Demo Accounts for Testing</h3>
+  <p><strong>Manager Account</strong><br>
+     Username: <code>manager2004@gmail.com</code><br>
+     Password: <code>12345</code>
+  </p>
+  <p><strong>Employee Account</strong><br>
+     Username: <code>employee2004@gmail.com</code><br>
+     Password: <code>12345</code>
+  </p>
+</div>
+
         </div>
       </div>
     </div>
